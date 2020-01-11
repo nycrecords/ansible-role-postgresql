@@ -24,5 +24,5 @@
       - {type: host, database: example, user: jdoe, address: '127.0.0.1/32', auth_method: md5}
 
   roles:
-    - role: nycrecords.rhsm
+    - role: nycrecords.yum_config_manager
     - role: ansible-role-postgresql

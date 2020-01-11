@@ -21,6 +21,6 @@ provisioner:
     cleanup: cleanup.yml
 verifier:
   name: testinfra
-  directory: ../tests/
+  directory: ../resources/tests/
   lint:
     name: flake8
