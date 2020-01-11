@@ -4,8 +4,8 @@ Ansible Role: PostgreSQL
 ![GitHub](https://img.shields.io/github/license/nycrecords/ansible-role-postgresql)
 [![Build Status](https://travis-ci.com/nycrecords/ansible-role-postgresql.svg?branch=master)](https://travis-ci.org/nycrecords/ansible-role-postgresql)
 [![Galaxy](https://img.shields.io/badge/galaxy-nycrecords.postgresql-blue.svg)](https://galaxy.ansible.com/nycrecords/postgresql)
-![Ansible](https://img.shields.io/ansible/role/d/44610)
-![Ansible](https://img.shields.io/ansible/quality/44610)
+![Ansible](https://img.shields.io/ansible/role/d/45803)
+![Ansible](https://img.shields.io/ansible/quality/45803)
 
 Installs and configures PostgreSQL server on RHEL/CentOS or Debian/Ubuntu servers.
 
