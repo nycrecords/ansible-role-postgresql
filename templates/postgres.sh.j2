@@ -1,2 +1,6 @@
 export PGDATA={{ postgresql_data_dir }}
-export PATH=$PATH:{{ postgresql_bin_path }}
+{% if use_scl %}
+    source {{ postgresql_scl_enable_path }}
+{% else %}
+    export PATH=$PATH:{{ postgresql_bin_path }}
+{% endif %}
