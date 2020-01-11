@@ -2,28 +2,34 @@
 dependency:
   name: galaxy
 driver:
-  name: docker
+  name: vagrant
+  provider:
+    name: virtualbox
 lint:
   name: yamllint
   options:
     config-file: molecule/default/yaml-lint.yml
 platforms:
   - name: instance
-    image: "geerlingguy/docker-${MOLECULE_DISTRO:-centos7}-ansible:latest"
-    command: ${MOLECULE_DOCKER_COMMAND:-""}
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    privileged: true
-    pre_build_image: true
+    box: ${VAGRANT_DEFAULT_BOX:-generic/rhel7}
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
   playbooks:
-    converge: ${MOLECULE_PLAYBOOK:-playbook.yml}
-scenario:
-  name: default
+    converge: converge.yml
+    cleanup: cleanup.yml
+  inventory:
+    host_vars:
+      instance:
+        rhsm_repositories:
+          enabled:
+            - rhel-7-server-rpms
+            - rhel-7-server-optional-rpms
+            - rhel-7-server-extras-rpms
+            - rhel-server-rhscl-7-rpms
 verifier:
   name: testinfra
+  directory: ../resources/tests/
   lint:
     name: flake8

@@ -13,6 +13,8 @@ No special requirements; note that this role requires root access, so either run
         - role: geerlingguy.postgresql
           become: yes
 
+On RedHat-based distributions, requires the EPEL repository (you can simply add the role geerlingguy.repo-epel to install ensure EPEL is available) or a valid RedHat Subscription.
+
 ## Role Variables
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
