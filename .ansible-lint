@@ -1,3 +1,10 @@
+exclude_paths:
+ - ./.travis.yml
+ - ./molecule/
+rulesdir:
+  - ~/ansible-lint-rules/rules/
 skip_list:
-  - '405'
-  - '503'
+  - '403'
+  - line-length
+use_default_rules: true
+verbosity: 1
