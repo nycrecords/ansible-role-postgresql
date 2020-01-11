@@ -1,31 +1,27 @@
 ---
 language: python
-services: docker
-
+python:
+  - 3.7
 env:
   global:
+    - MOLECULE_DEBUG: "true"
     - ROLE_NAME: postgresql
-  matrix:
-    - MOLECULE_DISTRO: centos7
-    - MOLECULE_DISTRO: fedora31
-    - MOLECULE_DISTRO: ubuntu1804
-    - MOLECULE_DISTRO: ubuntu1604
-    - MOLECULE_DISTRO: debian10
-    - MOLECULE_DISTRO: debian9
-
+    - EC2_REGION: us-east-1
+    - secure: eVylS3qE9m5YNHt6oERpX3BcFXaYIHuWrD0I13ZG2dVhwY4Envgdhlsvr7u/rTcVUNG/Ce3W9XM4Dg3CiVmfIwZ7N2dwe5uU8fQztlM7TCA4e5mFKB4vH+EkHrY2ixpjCi7h9xI2WXqxxKgyEYLT642HXKzQsCGmbl0I/wTVIUdoIdtr1xi5AGEnGdBFzE5jvssiK4eV4t5P9+/fKMhcHDStVsrCSzPt2X3Eit4u+plmnkjQqVXCT87+edsRtUutZVxXtUAHe+n3XWv3jXF/ZQ1+QpzoMbyWJUe265I6jw0BlcR9hqTpC9RqYs24P/qhmcvsb9UHrNyVgbEcG/bWJlQ/llI7tLhd+MzfvNiuHbL3Xbb9ULmv1wLDjxiqzotodKwK9jT7eSy3ETRQxMUWVfWO/aWAtujsFekVSKMg6ILfqSyAYVJXIVlRngniFBXJ1rfkSfhFoT/bwO9KjodILdhJgJRS/VBG6uyxJ0L44q6e/z/LymDQyvbF2qR6x7TQKcOivDJ6eu5O5ThLWW4jQZgRs4FBV57wn2dpGDi32z1h53x6DTvMhfJDcvo3YB7rNWz49+1vYQ5yp/dciLQ+6TS2INcH8UbSvYxBvFX4owplgC5nH4DWPvTDwcn97kAivgJjtADhaE/fzn42h7rTj/+v37guRll9Jy9SacXjIcc=
+    - secure: QtIvBC4Eyc5QgpIoAUxjjHnnDdrFYE8l7qrn3BeKkwS6T/jzT8lOYFBQkCa3SA1uvCI0IWnu7+HXW/i4l7wEK3G8KzugeUC/kEAuk4FjoxE62N8pn5qHGNN+As/l3NrAsMaKE9JGrAbnoz14xOuB3PZxsQ8lvsFN1hjV1lnBKd5z3eAaakGE6szrjj0q/TVOCDoYrSFs8gvJq02nbXT0X/T836Qwp5dAzAYpyMZmOT1aKNbPRIhYKaToeqqHR72WEUTC9MaN6eMaUF1FVBdHEyKb+47xcZ37bWYjfyZIV6pvaGkJhujH/Vf3q9HY65YD5t2LuKxEW72pHqeAWnLsOchSsalMO67JTLfWEfq/8EU0ApKADmLQTwY94ESZL6nICZyCmBBqC3OTnzITtQiKxO0pXSaaCH4MlpCXoRlzsYyIza6Ia9X4PwcTae1tFvj6tXSG9zZFTFQ+KEPufLwnjtkvGFVWjTCJ2McL/Ymjz2ekVhwdeIDtv6GsPCzQqcb0GFgevLyKYKOivE8Zo3azAcLOB2N6MnlC1t9UbvrxsV7YgQXSYtUz+L+mC8pq8DUDrCVmSTbt/jtyAwAXxqmdIeAsHFZ7S6hwHAto1zuj8KFPa4CJ2F/MKhjO3J0QWz9kxFgE/1QbE3aKuwRGQUrH20KzVDmPN7cUNuP3HyQ0oyE=
+    - secure: UstakhtE9cmBcAUugD/IJm5hson+6K2LWdA6p1dhXpXgl4B2N+j1CEbLqAI485PO3QZ1+GWgU5MB0yK3yHveLejQayeTg8orWnwNi+C0a0nYd2kBdjAVK8hWR06NiRPoeEuSVep4ntqc6Fp2jfkwr6i+uFdRoj6TKP0GsHAppPP5jWeOQfOXCavvbjdnWSqO1xKrk4I46QCYz9h4ETvcUQknTFBK3zXBChNO6AZxwYRqIFsVhDS45EuiI2Yey3AVVi7pm9t0gqH/BV0Cf2wkXaheVE98tS4Sg4KXJmGAm5VaApmTwraTPPX2DJw2IPTblRV0AiVXgvEvEMgqKj7cS3V2/HQlLx227uTuhBpXZN3NJKJK/tdQqzsWeY9z2YmFyEz5p7ycSgVlobmXiMmm6koG/YLjC9XUaB0BfXkau7kNxWDZh7aapsP2TDKqikvooPJZvgIBqsprwMlfMA75PWhQaReaZ/9mb5IIVMbzPesfTXoV2CAf2huR6De0wM3kHb23CwjvVbIuFWSBSPUld0TKl4PzKqIobc3WTDWFFFmuslsuJGdM4WhZDrocNe3hF8TtXf155IATPdLjhrN52U9TZP03uXZf7ZQLQV6allO00V7wk3IHptwUPRCJxHTHOrLDFYKHn+5Fr1yGuIl3n+YmxVK37zr/byU34RiKb4M=
+    - secure: RYudFwVQ+JeHeGpeSybLrjlS86r3VBUcM2ftBPWokTdVJ3irVrdm2w1/8yxhSdzOMHq85xzygMwUdO+TephvGm1UJFrUOULOCdLTXJfntw7n45H4+GH4Saas2fSCB5kuyQy51rVhdBkRYvae6C3j3+7fQX9AxrBR8//MEI+yUqEXXaVBS+zvJja2TZeW6aohlJKk6SUUxdyXLMTZIMx28UWLDOlzrWPoRzRUTtFKyUl+XwlHAi2nvitGZn5ufFFyOLcwK92QGEGYlFCqSk5oktVd4is3G+QvuBiwX7c5QmOnIL1FblBVnHQDoGOnsjiZ1q8DMLUprny25RTM7pK/bfcbxpkUCXT9JoYi7OI0Z+eJcS2MB9GYss2tikiX/uDrc9AotQohLMGQ67PzhYTaQJjTLene5S0njsmXId0qugONDYyPjccoGK+kJpplaqcGuVWaJ/JdA2xfn9ApEHmmKKbd1Jg12P2DxlLLEwvCzfxyGXRwFYGaHd82NOYk3PC1hfesQHIyxSfI9UVUPVSjuwetHnJPWJJ+h9JDZZD2sfFlOsizyZy4crpspno1asWV2yg76HNszcJMxNeFIl/ZZMVDK5pJvZgddehcTfI7ClqynhCGEdyWO61U3CFzdIHF8tb1HS6s3pwXpZOWET+CjPmbSd1Ccyv00DzL9P4oflw=
 install:
-  # Install test dependencies.
-  - pip install molecule docker
-
-before_script:
-  # Use actual Ansible Galaxy role name for the project directory.
-  - cd ../
-  - mv ansible-role-$ROLE_NAME geerlingguy.$ROLE_NAME
-  - cd geerlingguy.$ROLE_NAME
-
+  - pip install pipenv
+  - pipenv install
+  - aws configure set aws_access_key_id $AWS_ACCESS_KEY
+  - aws configure set aws_secret_access_key $AWS_SECRET_KEY
+  - aws configure set default.region $EC2_REGION
+  - aws configure list
 script:
-  # Run tests.
-  - molecule test
-
+  - molecule create --scenario-name aws
+  - molecule converge --scenario-name aws
+  - molecule verify --scenario-name aws
+  - molecule destroy --scenario-name aws
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
