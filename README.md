@@ -1,6 +1,11 @@
-# Ansible Role: PostgreSQL
+Ansible Role: PostgreSQL
+========================
 
-[![Build Status](https://travis-ci.org/geerlingguy/ansible-role-postgresql.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-postgresql)
+![GitHub](https://img.shields.io/github/license/nycrecords/ansible-role-postgresql)
+[![Build Status](https://travis-ci.com/nycrecords/ansible-role-postgresql.svg?branch=master)](https://travis-ci.org/nycrecords/ansible-role-postgresql)
+[![Galaxy](https://img.shields.io/badge/galaxy-nycrecords.postgresql-blue.svg)](https://galaxy.ansible.com/nycrecords/postgresql)
+![Ansible](https://img.shields.io/ansible/role/d/44610)
+![Ansible](https://img.shields.io/ansible/quality/44610)
 
 Installs and configures PostgreSQL server on RHEL/CentOS or Debian/Ubuntu servers.
 
@@ -145,3 +150,5 @@ MIT / BSD
 ## Author Information
 
 This role was created in 2016 by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/).
+
+Modified by [Joel Castillo](https://github.com/joelbcastillo) for the [NYC Department of Records and Information Services](https://github.com/nycrecords).
