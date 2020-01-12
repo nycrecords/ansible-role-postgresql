@@ -2,7 +2,7 @@
 dependencies: []
 
 galaxy_info:
-  name: postgresql
+  role_name: postgresql
   author: Joel Castillo
   description: PostgreSQL server for Linux.
   company: "City of New York, Department of Records and Information Services"
